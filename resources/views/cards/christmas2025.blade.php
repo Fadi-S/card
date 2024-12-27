@@ -23,9 +23,11 @@
 
 <div class="pt-48 p-4 h-screen max-w-xl mx-auto">
     <div class="border-4 p-3 border-red-600 rounded-lg h-full" dir="rtl">
-        <h1 class="text-2xl font-bold">
-            الابن المبارك/ {{ $name }}
-        </h1>
+        @if(!in_array($name, ["boys", "girls"]))
+            <h1 class="text-2xl font-bold">
+                الابن المبارك/ {{ $name }}
+            </h1>
+        @endif
 
         <div class="">
         </div>
