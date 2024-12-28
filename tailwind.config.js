@@ -13,8 +13,12 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                diwany: 'FSDiwany',
+                amiri: ["Amiri", ...defaultTheme.fontFamily.serif],
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 };
