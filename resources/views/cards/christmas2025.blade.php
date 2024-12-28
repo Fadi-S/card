@@ -28,12 +28,10 @@
 
 <div class="pt-32 p-4 h-screen max-w-xl mx-auto">
     <div class="sm:p-4 h-full" dir="rtl">
-
-            @if(!in_array($name, ["boys", "girls"]))
-                <h1 class="text-2xl mt-2 font-semibold font-amiri">
-                    دعوة خاصة من طفل المذود الي {{ $nameShort }}
-                </h1>
-            @endif
+            <h1 class="text-2xl mt-2 font-semibold font-amiri">
+                دعوة خاصة من طفل المذود
+                {{ !in_array($name, ["boys", "girls"]) ? "الي $nameShort" : "" }}
+            </h1>
 
             <div class="mt-2 text-lg">
                 <span>{!! str($mass)->markdown() !!}</span>
