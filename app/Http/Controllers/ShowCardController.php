@@ -21,7 +21,9 @@ class ShowCardController extends Controller
             ->pluck("school_year")
         ;
 
-        if ($schoolYears->doesntContain(3)) {
+        if ($schoolYears->isEmpty()) {
+            $time = $time[2];
+        }elseif ($schoolYears->doesntContain(3)) {
             $time = $time[0];
         } elseif ($schoolYears->intersect([4, 5, 6])->count() > 0) {
             $time = $time[2];
