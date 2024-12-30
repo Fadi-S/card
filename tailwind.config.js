@@ -14,7 +14,7 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 diwany: 'FSDiwany',
-                amiri: ["Amiri", ...defaultTheme.fontFamily.serif],
+                hadith: 'AlHadith1',
             },
         },
     },

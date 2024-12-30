@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Name;
 use Illuminate\Http\Request;
+use Spatie\UrlSigner\Laravel\Facades\UrlSigner;
 
 class ShowCardController extends Controller
 {

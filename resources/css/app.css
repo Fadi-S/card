@@ -10,4 +10,9 @@
         font-display: swap;
         src: url(/fonts/FS_Diwany.ttf) format('ttf');
     }
+
+    @font-face {
+        font-family: 'AlHadith1';
+        src: url(/fonts/Al-Hadith1-1.ttf) format('ttf');
+    }
 }
