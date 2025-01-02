@@ -35,6 +35,13 @@
             <span>{!! str($party)->markdown() !!}</span>
         </div>
 
+        <div>
+            <video>
+                <source src="{{ $video }}" type="video/mov">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
         <img class="w-64 rounded-full mx-auto" src="{{ asset("images/nativity_white.png") }}" alt="Nativity Scene"/>
     </div>
 </div>

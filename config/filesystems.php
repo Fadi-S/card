@@ -74,4 +74,11 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    'cloudfront' => [
+        'driver' => 'local',
+        'private_key' => env('CLOUDFRONT_PRIVATE_KEY', 'private-key.pem'),
+        'key_pair_id' => env('CLOUDFRONT_KEY_PAIR_ID'),
+        'domain' => env('CLOUDFRONT_DOMAIN'),
+    ],
+
 ];
