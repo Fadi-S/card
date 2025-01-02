@@ -14,7 +14,7 @@
 <style>
     .background {
         background-image: url('{{ asset("images/bg_stars.jpg") }}');
-        background-repeat: no-repeat;
+        background-repeat: no-repeat repeat;
         background-position: center top;
         background-size: cover;
     }
