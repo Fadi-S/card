@@ -92,7 +92,7 @@ class ShowCardController extends Controller
             "mass" => $mass,
             "party" => $party,
             "after" => $after,
-            "video" => $this->getLink("video_christmas2025.mov"),
+            "video" => $this->getLink("video_christmas2025.mp4"),
         ]);
     }
 }

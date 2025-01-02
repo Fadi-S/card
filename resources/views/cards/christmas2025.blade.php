@@ -36,8 +36,8 @@
         </div>
 
         <div>
-            <video>
-                <source src="{{ $video }}" type="video/mov">
+            <video preload="auto" class="object-fill" autoplay controls>
+                <source src="{{ $video }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
