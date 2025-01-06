@@ -53,9 +53,9 @@ class ShowCardController extends Controller
     {
         $name = base64_decode($data);
         $time = [
-            "٩ص", // Kobar
-            "١١ص", // So8ayarin
-            "٩ص أو ١١ص", // Both
+            "٩:٣٠ص", // Kobar
+            "١١:٣٠ص", // So8ayarin
+            "٩:٣٠ص أو ١١:٣٠ص", // Both
         ];
 
         $schoolYears = Name::query()

@@ -32,9 +32,11 @@
 
         <div class="mt-2 text-lg">
             <span>{!! str($mass)->markdown() !!}</span>
+            <br>
             <span>{!! str($party)->markdown() !!}</span>
         </div>
 
+        <br>
         <div>
             <video preload="auto" class="object-fill" autoplay controls>
                 <source src="{{ $video }}" type="video/mp4">
