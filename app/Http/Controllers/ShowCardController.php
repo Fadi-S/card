@@ -73,14 +73,16 @@ class ShowCardController extends Controller
             $time = $time[1];
         }
 
-        $mass = str("مستنيك فى قداس العيد يوم **1** الساعة **2**.")
+        $mass = str("مستنيك فى قداس العيد يوم **1** 3 الساعة **2**.")
             ->replace("1", "الاثنين ٦ يناير")
             ->replace("2", "٧:٣٠م")
+            ->replace("3", "\n\r")
             ->toString()
         ;
-        $party = str("و نتقابل كمان في الحفلة يوم **1** الساعة **2**.")
+        $party = str("و نتقابل كمان في الحفلة يوم **1** 3 الساعة **2**.")
             ->replace("1", "الثلاثاء ٧ يناير")
             ->replace("2", $time)
+            ->replace("3", "\n\r")
             ->toString()
         ;
 
