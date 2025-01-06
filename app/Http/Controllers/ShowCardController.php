@@ -89,7 +89,7 @@ class ShowCardController extends Controller
         $after = "";
 
         $nameShort = str($name)->split("/\s+/")->splice(0, 1)->join(" ");
-        if($name === "J6") {
+        if(strtolower($name) === "j6") {
             $nameShort = "اسرة دانيال النبي و الثلاثة فتية";
         }
 
