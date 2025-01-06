@@ -88,9 +88,14 @@ class ShowCardController extends Controller
 
         $after = "";
 
+        $nameShort = str($name)->split("/\s+/")->splice(0, 1)->join(" ");
+        if($name === "J6") {
+            $nameShort = "اسرة دانيال النبي و الثلاثة فتية";
+        }
+
         return view("cards.$card", [
             "name" => $name,
-            "nameShort" => str($name)->split("/\s+/")->splice(0, 1)->join(" "),
+            "nameShort" => $nameShort,
             "mass" => $mass,
             "party" => $party,
             "after" => $after,
