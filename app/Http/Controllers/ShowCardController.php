@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Links;
 use App\Models\Name;
 use Aws\CloudFront\CloudFrontClient;
 use Illuminate\Http\Request;
@@ -11,42 +12,11 @@ use Spatie\UrlSigner\Laravel\Facades\UrlSigner;
 
 class ShowCardController extends Controller
 {
-    private function signUrl(?string $path, \DateTimeInterface $ttl) : ?string
+    private Links $links;
+
+    public function __construct(Links $links)
     {
-        if(! $path) {
-            return null;
-        }
-
-        if(! ($keyPair = config('filesystems.cloudfront.key_pair_id'))) {
-            return Storage::temporaryUrl($path, $ttl);
-        }
-
-        $resourceKey = 'https://' . config('filesystems.cloudfront.domain') . '/' . $path;
-
-        $cloudFrontClient = new CloudFrontClient([
-            'profile' => 'default',
-            'version' => '2018-06-18',
-            'region' => config('filesystems.disks.s3.region'),
-        ]);
-
-        return $cloudFrontClient->getSignedUrl([
-            'url' => $resourceKey,
-            'expires' => $ttl->getTimestamp(),
-            'private_key' => config('filesystems.cloudfront.private_key'),
-            'key_pair_id' => $keyPair,
-        ]);
-    }
-
-    private function getLink($path): ?string
-    {
-        if (! $path) {
-            return null;
-        }
-
-        $expires = now()->addMinutes(60);
-
-        return Cache::remember($path, $expires, fn() => $this->signUrl($path, $expires)
-        );
+        $this->links = $links;
     }
 
     public function __invoke($card, $data)
@@ -99,7 +69,7 @@ class ShowCardController extends Controller
             "mass" => $mass,
             "party" => $party,
             "after" => $after,
-            "video" => $this->getLink("video_christmas2025.mp4"),
+            "video" => $this->links->getLink("video_christmas2025.mp4"),
         ]);
     }
 }
